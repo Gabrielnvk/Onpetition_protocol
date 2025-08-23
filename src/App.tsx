@@ -22,7 +22,7 @@ function App() {
   });
 
   const filteredCompetitions = useMemo(() => {
-    let filtered = mockCompetitions.filter(competition => {
+    const filtered = mockCompetitions.filter(competition => {
       // Search filter
       if (filters.search) {
         const searchTerm = filters.search.toLowerCase();
@@ -95,7 +95,7 @@ function App() {
     <ThemeProvider>
       <div className="min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors duration-200">
         <Header onMenuClick={() => setSidebarOpen(true)} />
-        
+
         <div className="flex">
           <FilterSidebar
             filters={filters}
@@ -104,20 +104,20 @@ function App() {
             onClose={() => setSidebarOpen(false)}
             competitionTypes={competitionTypes}
           />
-          
+
           <main className="flex-1 p-6 lg:ml-0">
             <div className="max-w-7xl mx-auto">
               {/* Page Header */}
               <div className="flex items-center justify-between mb-8">
                 <div>
                   <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                    Competition Dashboard
+                    Competition Dashboarde
                   </h1>
                   <p className="text-gray-600 dark:text-gray-400">
                     Discover and participate in decentralized competitions worldwide
                   </p>
                 </div>
-                
+
                 <button
                   onClick={() => setCreateModalOpen(true)}
                   className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-lg font-medium transition-all duration-200 transform hover:scale-105 shadow-lg"
@@ -135,7 +135,7 @@ function App() {
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
                   Available Competitions ({filteredCompetitions.length})
                 </h2>
-                
+
                 <button
                   onClick={() => setSidebarOpen(true)}
                   className="lg:hidden flex items-center space-x-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
